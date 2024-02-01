@@ -1,0 +1,52 @@
+.app-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: calc(100vh - 70px);
+  gap: 2rem;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3rem;
+}
+
+.content__title {
+  font-size: 3rem;
+  font-weight: 700;
+  color: var(--primary-color);
+}
+
+.content__body {
+  font-size: 1.6rem;
+  font-weight: 500;
+  color: var(--text-primary-color);
+  opacity: 0.6;
+  text-align: center;
+}
+
+.content__cta {
+  padding: 1rem 2rem;
+  border: none;
+  border-radius: 100vmax;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  background-color: var(--secondary-color);
+}
+
+.content__cta a {
+  font-size: 1.6rem;
+  font-weight: 500;
+  color: var(--text-primary-color);
+}
+
+.content__cta:hover {
+  background-color: var(--accent-color);
+}
+
+.content__cta:hover a {
+  color: var(--background-color);
+}

@@ -35,8 +35,11 @@ body {
 
 :root {
   --primary-color: #b8dba3;
-  --background-color: #080c05;
-  --text-primary-color: #edf5e6;
   --secondary-color: #3f2f77;
+
+  --background-color: #080c05;
+
   --accent-color: #b950a5;
+
+  --text-primary-color: #edf5e6;
 }
