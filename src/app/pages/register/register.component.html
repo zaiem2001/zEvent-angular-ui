@@ -1,0 +1,66 @@
+<div class="register-container">
+  <div class="register-container__form">
+    <h1 class="register-container__form__title">Register</h1>
+    <form>
+      <div class="col">
+        <div class="form-group">
+          <label for="username">Username</label>
+          <input
+            type="text"
+            class="form-control"
+            id="username"
+            placeholder="Enter Username"
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input
+            type="email"
+            class="form-control"
+            id="email"
+            placeholder="Enter email"
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="phoneNumber">Phone Number</label>
+          <input
+            type="text"
+            class="form-control"
+            id="phoneNumber"
+            placeholder="Enter Phone Number"
+          />
+        </div>
+      </div>
+
+      <div class="col">
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input
+            type="password"
+            class="form-control"
+            id="password"
+            placeholder="Password"
+          />
+        </div>
+        <div class="form-group">
+          <label for="confirm-password">Confirm Password</label>
+          <input
+            type="password"
+            class="form-control"
+            id="confirm-password"
+            placeholder="Confirm Password"
+          />
+        </div>
+
+        <button type="submit" class="register-btn">Register</button>
+      </div>
+    </form>
+
+    <div class="register-container__cta">
+      <p>Already have an account?</p>
+      <a routerLink="/login">Login</a>
+    </div>
+  </div>
+</div>

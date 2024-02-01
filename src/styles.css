@@ -1,1 +1,45 @@
 /* You can add global styles to this file, and also import other style files */
+
+html {
+  font-size: 10px;
+}
+
+*,
+::after,
+::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.container {
+}
+
+ul {
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+body {
+  background-color: var(--background-color);
+  color: var(--text-primary-color);
+  font-family: "Poppins", sans-serif;
+}
+
+/* font-family: 'Montserrat', sans-serif; */
+/* font-family: 'Patrick Hand SC', cursive; */
+/* font-family: 'Roboto', sans-serif; */
+
+:root {
+  --primary-color: #b8dba3;
+  --secondary-color: #3f2f77;
+
+  --background-color: #080c05;
+
+  --accent-color: #b950a5;
+
+  --text-primary-color: #edf5e6;
+}
