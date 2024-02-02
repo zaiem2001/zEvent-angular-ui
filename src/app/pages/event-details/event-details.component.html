@@ -1,0 +1,45 @@
+<div class="event-details-container" *ngIf="event">
+  <div class="event-left">
+    <div class="event-img">
+      <img [src]="event.image" [alt]="event.name" />
+    </div>
+
+    <div class="about">
+      <h3>About</h3>
+      <p class="description">{{ event.description }}</p>
+
+      <div class="event-time">
+        <span>Event Time :</span>
+        <p>{{ event.date.start }}</p>
+        -
+        <p>{{ event.date.end }}</p>
+      </div>
+
+      <div class="event-location">
+        <span>Location :</span>
+        <p>{{ event.location }}</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="event-right">
+    <div class="event-name">
+      <h3>{{ event.name }}</h3>
+    </div>
+
+    <div class="event-category">
+      <mat-icon>bookmark_border</mat-icon>
+      <p>{{ event.category }}</p>
+    </div>
+
+    <div class="event-cta">
+      <span class="price">Free</span>
+      <button class="btn btn-primary">Enter</button>
+    </div>
+
+    <div class="invite-friends">
+      <h3>Invite your Friends</h3>
+      <p>Enjoy shared experience</p>
+    </div>
+  </div>
+</div>
