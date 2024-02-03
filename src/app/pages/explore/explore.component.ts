@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { EventService } from 'src/app/services/event.service';
-import { CATEGORIES, EVENTS } from 'src/constants/constants';
-import { IEventExplore } from 'src/interface/Event';
+import { CATEGORIES } from 'src/constants/constants';
+import { IEvent } from 'src/interface/Event';
 
 @Component({
   selector: 'app-explore',
@@ -11,7 +11,7 @@ import { IEventExplore } from 'src/interface/Event';
 })
 export class ExploreComponent implements OnInit {
   categories: string[] = [];
-  events: IEventExplore[] = [];
+  events: IEvent[] = [];
 
   constructor(
     private route: ActivatedRoute,

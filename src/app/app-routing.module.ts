@@ -5,6 +5,7 @@ import { LoginComponent } from './pages/login/login.component';
 import { RegisterComponent } from './pages/register/register.component';
 import { ExploreComponent } from './pages/explore/explore.component';
 import { EventDetailsComponent } from './pages/event-details/event-details.component';
+import { DashboardComponent } from './pages/dashboard/dashboard.component';
 
 const routes: Routes = [
   {
@@ -16,6 +17,7 @@ const routes: Routes = [
   { path: 'register', component: RegisterComponent },
   { path: 'explore', component: ExploreComponent },
   { path: 'explore/:eventId', component: EventDetailsComponent },
+  { path: 'dashboard', component: DashboardComponent },
 ];
 
 @NgModule({

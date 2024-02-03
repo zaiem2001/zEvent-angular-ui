@@ -1,0 +1,30 @@
+<div class="sidebar">
+  <div class="sidebar-top">
+    <div class="logo">Z</div>
+
+    <div
+      class="sidebar-item"
+      *ngFor="let item of sidebar_content.top"
+      routerLink="/dashboard"
+      [queryParams]="{ tab: item.query }"
+      [ngClass]="{ active: item.query === active_tab }"
+    >
+      <mat-icon>{{ item.icon }}</mat-icon>
+      <span>{{ item.name }}</span>
+    </div>
+  </div>
+
+  <div class="sidebar-bottom">
+    <div
+      class="sidebar-item"
+      *ngFor="let item of sidebar_content.bottom"
+      routerLink="/dashboard"
+      [queryParams]="{ tab: item.query }"
+      [ngClass]="{ active: item.query === active_tab }"
+      (click)="handleEvent(item.event)"
+    >
+      <mat-icon>{{ item.icon }}</mat-icon>
+      <span>{{ item.name }}</span>
+    </div>
+  </div>
+</div>

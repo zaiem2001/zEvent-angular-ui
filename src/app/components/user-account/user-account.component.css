@@ -1,0 +1,76 @@
+.user-account-container {
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+  align-items: center;
+  justify-content: center;
+}
+
+.user-details {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  align-items: center;
+  justify-content: center;
+}
+
+.user-logo {
+  font-size: 4.4rem;
+  font-family: "Patrick Hand SC", cursive;
+  font-weight: 700;
+  color: var(--text-primary-color);
+  margin-bottom: 1rem;
+}
+
+.user-details h3 {
+  font-size: 2rem;
+  color: var(--text-primary-color);
+}
+
+.user-form {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  width: 50%;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  align-items: center;
+  justify-content: center;
+}
+
+.form-group label {
+  font-size: 1.8rem;
+  color: var(--text-primary-color);
+  align-self: start;
+}
+
+.form-group input {
+  padding: 0.8rem 1rem;
+  border-radius: 3px;
+  border: 1px solid var(--text-primary-color);
+  width: 100%;
+  font-size: 1.6rem;
+  color: var(--text-primary-color);
+  background-color: var(--background-color);
+  transition: all 0.3s ease;
+  padding: 1rem;
+}
+
+.form-group button {
+  padding: 1.5rem 2rem;
+  background-color: var(--accent-color);
+  color: var(--text-primary-color);
+  border: none;
+
+  border-radius: 3px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  gap: 0.5rem;
+  width: 100%;
+  font-family: inherit;
+  font-size: 2rem;
+}
