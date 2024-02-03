@@ -17,4 +17,8 @@ export class EventService {
 
     return EVENTS;
   }
+
+  getLoggedInUsersEvents(userId: string) {
+    return EVENTS.filter((event) => event.user == userId);
+  }
 }

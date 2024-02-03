@@ -1,0 +1,61 @@
+.sidebar {
+  padding: 2rem;
+  background-color: var(--primary-color);
+
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  justify-content: space-between;
+  height: 100%;
+}
+
+.logo {
+  font-size: 4.4rem;
+  font-family: "Patrick Hand SC", cursive;
+  font-weight: 700;
+  color: var(--background-color);
+  margin-bottom: 1rem;
+}
+
+.sidebar-top,
+.sidebar-bottom {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.sidebar-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1.8rem;
+  cursor: pointer;
+  padding: 0.8rem 1rem;
+  border-radius: 3px;
+}
+
+.sidebar-item:not(.active):hover {
+  border-bottom: 2px solid var(--background-color);
+  border-radius: 0;
+}
+
+.sidebar-item.active {
+  background-color: var(--background-color);
+}
+
+.sidebar-item span {
+  color: var(--background-color);
+  text-decoration: none;
+}
+
+.sidebar-item.active span {
+  color: var(--text-primary-color);
+}
+
+.sidebar-item.active mat-icon {
+  color: var(--text-primary-color);
+}
+
+.sidebar-item mat-icon {
+  color: var(--background-color);
+}

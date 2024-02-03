@@ -1,0 +1,24 @@
+<div class="dashboard-container">
+  <div class="sidebar-container">
+    <app-sidebar
+      [sidebar_content]="sidebar_content"
+      [active_tab]="active_tab"
+    ></app-sidebar>
+  </div>
+
+  <div class="dashboard-body">
+    <div class="dashboard-header">
+      <h3>Events</h3>
+
+      <div class="create-event-btn">
+        <mat-icon>add</mat-icon>
+        <a routerLink="/dashboard/create-event">Create Event</a>
+      </div>
+    </div>
+
+    <div class="dashboard-content">
+      <app-event [events]="events" *ngIf="active_tab === 'events'"></app-event>
+      <app-user-account *ngIf="active_tab === 'account'"></app-user-account>
+    </div>
+  </div>
+</div>

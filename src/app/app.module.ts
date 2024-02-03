@@ -10,6 +10,10 @@ import { LoginComponent } from './pages/login/login.component';
 import { RegisterComponent } from './pages/register/register.component';
 import { ExploreComponent } from './pages/explore/explore.component';
 import { EventDetailsComponent } from './pages/event-details/event-details.component';
+import { DashboardComponent } from './pages/dashboard/dashboard.component';
+import { EventComponent } from './components/event/event.component';
+import { SidebarComponent } from './components/sidebar/sidebar.component';
+import { UserAccountComponent } from './components/user-account/user-account.component';
 
 @NgModule({
   declarations: [
@@ -20,6 +24,10 @@ import { EventDetailsComponent } from './pages/event-details/event-details.compo
     RegisterComponent,
     ExploreComponent,
     EventDetailsComponent,
+    DashboardComponent,
+    EventComponent,
+    SidebarComponent,
+    UserAccountComponent,
   ],
 
   imports: [BrowserModule, AppRoutingModule, MatIconModule],
