@@ -42,4 +42,8 @@ body {
   --accent-color: #b950a5;
 
   --text-primary-color: #edf5e6;
+  --text-secondary-color: #585e47;
 }
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
