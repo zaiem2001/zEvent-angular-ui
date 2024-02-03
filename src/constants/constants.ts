@@ -20,7 +20,7 @@ export const EVENTS: IEvent[] = [
     id: '1',
     image: '//unsplash.it/600/500',
     name: 'Blockchain',
-    category: 'All',
+    category: 'Technology',
     date: { start: '04 April', end: '04 June' },
     user: 'Zaiem',
 

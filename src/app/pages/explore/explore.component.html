@@ -4,7 +4,12 @@
   </div>
 
   <div class="categories">
-    <div class="category" *ngFor="let category of categories">
+    <div
+      class="category"
+      *ngFor="let category of categories"
+      [routerLink]="['/explore']"
+      [queryParams]="{category}"
+    >
       <span>{{ category }}</span>
     </div>
   </div>
