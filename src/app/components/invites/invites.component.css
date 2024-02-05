@@ -1,0 +1,92 @@
+.invites-container {
+  display: flex;
+  flex-direction: column;
+  /* align-items: center; */
+  justify-content: center;
+  margin-top: 2rem;
+  gap: 5rem;
+}
+
+.invites-status-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.invites-status-container h3 {
+  font-size: 2rem;
+  font-weight: 500;
+}
+
+.invites-list-group {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.invites-list-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.5rem;
+  border-radius: 10px;
+  background-color: #f5f5f5;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  padding-right: 2rem;
+}
+
+.invites-list-item h4 {
+  font-size: 1.8rem;
+  font-weight: 500;
+  color: var(--background-color);
+}
+
+.invites-list-item p {
+  font-size: 1.4rem;
+  font-weight: 400;
+  color: var(--secondary-color);
+}
+
+.invites-body {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.invites-body p {
+  font-size: 1.6rem;
+  font-weight: 400;
+  color: var(--secondary-color);
+}
+
+.cta {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.cta button {
+  padding: 1rem 2rem;
+  border: none;
+  border-radius: 5px;
+  font-size: 1.6rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.received-invite-body p {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 2rem;
+}
+
+.accept {
+  background-color: var(--primary-color);
+  color: var(--background-color);
+}
+
+.reject {
+  background-color: var(--background-color);
+  color: var(--primary-color);
+}

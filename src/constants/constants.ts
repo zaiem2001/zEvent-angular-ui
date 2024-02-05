@@ -58,6 +58,7 @@ export const SIDEBAR_ITEMS = {
   top: [
     { icon: 'event', name: 'Events', query: 'events' },
     { icon: 'bookmark', name: 'Invites', query: 'invites' },
+    { icon: 'add', name: 'Create Event', query: 'create-event' },
   ],
 
   bottom: [
