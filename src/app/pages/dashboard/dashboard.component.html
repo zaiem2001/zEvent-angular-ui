@@ -22,6 +22,8 @@
       <app-create-event
         *ngIf="active_tab.query === 'create-event'"
       ></app-create-event>
+
+      <app-invites *ngIf="active_tab.query === 'invites'" />
     </div>
   </div>
 </div>
