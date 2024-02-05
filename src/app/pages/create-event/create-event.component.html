@@ -68,17 +68,9 @@
       <label for="category"> Category </label>
 
       <select class="form-control" id="category">
-        <option>Music</option>
-        <option>Art</option>
-        <option>Technology</option>
-        <option>Science</option>
-        <option>Education</option>
-        <option>Health</option>
-        <option>Business</option>
-        <option>Food</option>
-        <option>Travel</option>
-        <option>Sports</option>
-        <option>Other</option>
+        <option *ngFor="let category of categories" [value]="category">
+          {{ category }}
+        </option>
       </select>
     </div>
 
