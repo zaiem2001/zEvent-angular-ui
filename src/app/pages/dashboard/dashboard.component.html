@@ -2,23 +2,26 @@
   <div class="sidebar-container">
     <app-sidebar
       [sidebar_content]="sidebar_content"
-      [active_tab]="active_tab"
+      [active_tab]="active_tab.query"
     ></app-sidebar>
   </div>
 
   <div class="dashboard-body">
     <div class="dashboard-header">
-      <h3>Events</h3>
-
-      <div class="create-event-btn">
-        <mat-icon>add</mat-icon>
-        <a routerLink="/dashboard/create-event">Create Event</a>
-      </div>
+      <h3>{{ active_tab.name }}</h3>
     </div>
 
     <div class="dashboard-content">
-      <app-event [events]="events" *ngIf="active_tab === 'events'"></app-event>
-      <app-user-account *ngIf="active_tab === 'account'"></app-user-account>
+      <app-event
+        [events]="events"
+        *ngIf="active_tab.query === 'events'"
+      ></app-event>
+      <app-user-account
+        *ngIf="active_tab.query === 'account'"
+      ></app-user-account>
+      <app-create-event
+        *ngIf="active_tab.query === 'create-event'"
+      ></app-create-event>
     </div>
   </div>
 </div>

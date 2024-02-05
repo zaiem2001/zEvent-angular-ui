@@ -14,6 +14,7 @@ import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { EventComponent } from './components/event/event.component';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { UserAccountComponent } from './components/user-account/user-account.component';
+import { CreateEventComponent } from './pages/create-event/create-event.component';
 
 @NgModule({
   declarations: [
@@ -28,6 +29,7 @@ import { UserAccountComponent } from './components/user-account/user-account.com
     EventComponent,
     SidebarComponent,
     UserAccountComponent,
+    CreateEventComponent,
   ],
 
   imports: [BrowserModule, AppRoutingModule, MatIconModule],

@@ -12,7 +12,10 @@ import { IEvent } from 'src/interface/Event';
 export class DashboardComponent implements OnInit {
   events: IEvent[] = [];
   sidebar_content: any;
-  active_tab: string = 'events';
+  active_tab: { query: string; name: string } = {
+    query: 'events',
+    name: 'Events',
+  };
 
   constructor(
     private eventService: EventService,
@@ -22,10 +25,15 @@ export class DashboardComponent implements OnInit {
   ngOnInit(): void {
     this.events = this.eventService.getLoggedInUsersEvents('1');
     this.sidebar_content = SIDEBAR_ITEMS;
+    const totalItems = this.sidebar_content.top.concat(
+      this.sidebar_content.bottom
+    );
 
     this.route.queryParams.subscribe((query) => {
       const { tab } = query;
-      this.active_tab = tab || 'events';
+      if (tab) {
+        this.active_tab = totalItems.find((item: any) => item.query === tab);
+      }
     });
   }
 }

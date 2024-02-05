@@ -1,0 +1,58 @@
+.create-event-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  padding-top: 1rem;
+}
+
+.create-event-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  overflow: auto;
+  padding-top: 2.5rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.form-group label {
+  font-size: 1.8rem;
+  color: var(--text-primary-color);
+}
+
+.form-group input,
+textarea,
+select,
+button {
+  padding: 0.8rem 1rem;
+  border-radius: 3px;
+  border: 1px solid var(--text-primary-color);
+  width: 100%;
+  font-size: 1.6rem;
+  color: var(--text-primary-color);
+  background-color: var(--background-color);
+  transition: all 0.3s ease;
+  padding: 1rem;
+}
+
+.form-group button {
+  background-color: var(--text-primary-color);
+  color: var(--background-color);
+  font-family: inherit;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 2rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: none;
+}
+
+.form-group button:hover {
+  background-color: var(--accent-color);
+}
