@@ -9,9 +9,9 @@
     <div class="menu">
       <ul class="menu-items">
         <li><a routerLink="/explore">Explore</a></li>
-        <li><a routerLink="/dashboard">Dashboard</a></li>
-        <li><a routerLink="/login">Login</a></li>
-        <li><a routerLink="/register">Register</a></li>
+        <li *ngIf="isUserLoggedIn"><a routerLink="/dashboard">Dashboard</a></li>
+        <li *ngIf="!isUserLoggedIn"><a routerLink="/login">Login</a></li>
+        <li *ngIf="!isUserLoggedIn"><a routerLink="/register">Register</a></li>
       </ul>
     </div>
   </div>
