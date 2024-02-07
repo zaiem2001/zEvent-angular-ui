@@ -1,5 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { Router } from '@angular/router';
+import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
   selector: 'app-sidebar',
@@ -10,14 +11,18 @@ export class SidebarComponent {
   @Input() sidebar_content: any;
   @Input() active_tab: string = '';
 
-  constructor(private router: Router) {}
+  constructor(private router: Router, private authService: AuthService) {}
 
   handleEvent = (e: Function) => {
     if (!e) return;
-    e({ handleGoBack: this.handleGoBack });
+    e({ handleGoBack: this.handleGoBack, handleLogout: this.handleLogout });
   };
 
   handleGoBack = () => {
-    this.router.navigate(['/explore']);
+    this.router.navigate(['/']);
+  };
+
+  handleLogout = () => {
+    this.authService.logout();
   };
 }

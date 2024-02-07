@@ -1,6 +1,12 @@
 import { IEvent } from 'src/interface/Event';
 import { MediumEnum, PrivacyEnum } from 'src/interface/enums';
-import { handleGoBack } from './helpers';
+import { handleGoBack, handleLogout } from './helpers';
+
+export const BASE_URL = 'http://localhost:8080/api';
+
+export const LOCAL_STORAGE_KEYS = {
+  USER: 'user',
+};
 
 export const CATEGORIES: string[] = [
   'All',
@@ -69,6 +75,11 @@ export const SIDEBAR_ITEMS = {
       query: '',
       event: handleGoBack,
     },
-    { icon: 'exit_to_app', name: 'Logout', query: 'logout' },
+    {
+      icon: 'exit_to_app',
+      name: 'Logout',
+      query: 'logout',
+      event: handleLogout,
+    },
   ],
 };
