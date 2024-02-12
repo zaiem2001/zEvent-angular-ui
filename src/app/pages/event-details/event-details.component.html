@@ -34,7 +34,10 @@
 
     <div class="event-cta">
       <span class="price">Free</span>
-      <button class="btn btn-primary" [disabled]="!isUserLoggedIn">
+      <button
+        class="btn btn-primary"
+        [disabled]="!isUserLoggedIn || isCurrentUsersEvent"
+      >
         {{ isUserLoggedIn ? "Enter" : "Please Login to Enter" }}
       </button>
     </div>

@@ -9,7 +9,7 @@ export interface IEventExplore {
 }
 
 export interface IEvent {
-  id: string;
+  id?: string;
   name: string;
   description: string;
   image: string;
@@ -21,5 +21,5 @@ export interface IEvent {
   medium: MediumEnum;
   privacy: PrivacyEnum;
   date: { start: string; end: string };
-  user: string;
+  user?: any;
 }

@@ -59,4 +59,8 @@ export class AuthService {
     this.isUserLoggedInSubj.next(isUserLoggedIn);
     return isUserLoggedIn;
   }
+
+  getLoggedInUserDetails() {
+    return localStorageEvents.get(LOCAL_STORAGE_KEYS.USER);
+  }
 }

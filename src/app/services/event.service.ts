@@ -1,24 +1,37 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { EVENTS } from 'src/constants/constants';
+import { BASE_URL } from 'src/constants/constants';
 import { IEvent } from 'src/interface/Event';
+import { ErrorHandler } from '../helpers/error.helper';
+
+const eventUrls = {
+  create: `${BASE_URL}/events`,
+  explore: `${BASE_URL}/events/all`,
+  byId: `${BASE_URL}/events/`,
+  users: `${BASE_URL}/events`,
+};
 
 @Injectable({
   providedIn: 'root',
 })
 export class EventService {
-  getEventById(eventId: string): IEvent | undefined {
-    return EVENTS.find((event) => event.id === eventId);
+  constructor(private http: HttpClient, private errorHandler: ErrorHandler) {}
+
+  createEvent(event: IEvent) {
+    return this.http.post<IEvent>(eventUrls.create, {
+      ...event,
+    });
   }
 
-  getExplorePageEvents(category: string): IEvent[] {
-    if (category && category !== 'All') {
-      return EVENTS.filter((event) => event.category === category);
-    }
-
-    return EVENTS;
+  getEventById(eventId: string) {
+    return this.http.get<IEvent>(`${eventUrls.byId}${eventId}`);
   }
 
-  getLoggedInUsersEvents(userId: string) {
-    return EVENTS.filter((event) => event.user == userId);
+  getExplorePageEvents() {
+    return this.http.get<IEvent[]>(eventUrls.explore);
+  }
+
+  getLoggedInUsersEvents() {
+    return this.http.get<IEvent[]>(eventUrls.users);
   }
 }

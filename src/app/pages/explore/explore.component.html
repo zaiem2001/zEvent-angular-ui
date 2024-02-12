@@ -5,7 +5,10 @@
 
   <div class="categories">
     <div
-      class="category"
+      [ngClass]="{
+        active: category === currentCategory,
+        category: true
+      }"
       *ngFor="let category of categories"
       [routerLink]="['/explore']"
       [queryParams]="{category}"
@@ -17,6 +20,6 @@
   <div class="event_body">
     <h3 class="events-category">All Events</h3>
 
-    <app-event [events]="events"></app-event>
+    <app-event [events]="filteredEvents"></app-event>
   </div>
 </div>

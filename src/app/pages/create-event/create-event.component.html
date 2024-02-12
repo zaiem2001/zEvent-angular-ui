@@ -1,12 +1,15 @@
 <div class="create-event-container">
-  <div class="create-event-form">
+  <form class="create-event-form" (ngSubmit)="onSubmit(f)" #f="ngForm">
     <div class="form-group">
       <label for="title">Title</label>
       <input
         type="text"
         class="form-control"
-        id="title"
-        placeholder="Enter Title"
+        id="name"
+        placeholder="Enter Event Name"
+        name="name"
+        required
+        ngModel
       />
     </div>
     <div class="form-group">
@@ -15,33 +18,63 @@
         class="form-control"
         id="description"
         rows="3"
+        name="description"
         cols="50"
+        required
+        ngModel
       ></textarea>
     </div>
 
     <div class="form-group">
+      <label for="image">Image</label>
+      <input
+        type="text"
+        class="form-control"
+        id="image"
+        placeholder="Enter Image URL"
+        name="image"
+        required
+        ngModel
+      />
+    </div>
+
+    <div class="form-group">
       <label for="privacy">Privacy</label>
-      <select class="form-control" id="privacy">
-        <option>Public</option>
-        <option>Private</option>
+      <select class="form-control" id="privacy" name="privacy" required ngModel>
+        <option value="PUBLIC">Public</option>
+        <option value="PRIVATE">Private</option>
       </select>
     </div>
 
     <div class="form-group">
       <label for="medium">Medium</label>
-      <select class="form-control" id="medium">
-        <option>Online</option>
-        <option>Offline</option>
+      <select class="form-control" id="medium" name="medium" required ngModel>
+        <option value="ONLINE">Online</option>
+        <option value="OFFLINE">Offline</option>
       </select>
     </div>
 
     <div class="form-group">
       <label for="start-date">Start Date</label>
-      <input type="date" class="form-control" id="start-date" />
+      <input
+        type="date"
+        class="form-control"
+        id="start-date"
+        name="start"
+        required
+        ngModel
+      />
     </div>
     <div class="form-group">
       <label for="end-date">End Date</label>
-      <input type="date" class="form-control" id="end-date" />
+      <input
+        type="date"
+        class="form-control"
+        id="end-date"
+        name="end"
+        required
+        ngModel
+      />
     </div>
 
     <div class="form-group">
@@ -51,6 +84,9 @@
         class="form-control"
         id="duration"
         placeholder="Enter Duration"
+        name="duration"
+        required
+        ngModel
       />
     </div>
 
@@ -61,14 +97,26 @@
         class="form-control"
         id="max-participants"
         placeholder="Enter Max Participants"
+        name="maxCapacity"
+        required
+        ngModel
       />
     </div>
 
     <div class="form-group">
       <label for="category"> Category </label>
 
-      <select class="form-control" id="category">
-        <option *ngFor="let category of categories" [value]="category">
+      <select
+        class="form-control"
+        id="category"
+        name="category"
+        required
+        ngModel
+      >
+        <option
+          *ngFor="let category of categories"
+          [value]="category.toUpperCase()"
+        >
           {{ category }}
         </option>
       </select>
@@ -81,14 +129,30 @@
         class="form-control"
         id="location"
         placeholder="Enter Location"
+        name="location"
+        required
+        ngModel
       />
     </div>
 
     <div class="form-group">
-      <button type="submit">
+      <label for="language">Language</label>
+      <input
+        type="text"
+        class="form-control"
+        id="language"
+        placeholder="Enter Language"
+        name="language"
+        required
+        ngModel
+      />
+    </div>
+
+    <div class="form-group">
+      <button type="submit" [disabled]="!f.valid">
         <mat-icon>add</mat-icon>
         Create
       </button>
     </div>
-  </div>
+  </form>
 </div>

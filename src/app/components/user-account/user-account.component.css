@@ -60,6 +60,11 @@
   padding: 1rem;
 }
 
+.form-group input:disabled {
+  background-color: var(--text-primary-color);
+  color: var(--background-color);
+}
+
 .form-group button {
   padding: 1.5rem 2rem;
   background-color: var(--accent-color);
@@ -73,4 +78,9 @@
   width: 100%;
   font-family: inherit;
   font-size: 2rem;
+}
+
+.form-group .cancel-button {
+  background-color: var(--text-primary-color);
+  color: var(--background-color);
 }
