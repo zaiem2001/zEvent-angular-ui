@@ -12,6 +12,8 @@ import { IEvent } from 'src/interface/Event';
 export class ExploreComponent implements OnInit {
   categories: string[] = [];
   events: IEvent[] = [];
+  filteredEvents: IEvent[] = [];
+  currentCategory = 'All';
 
   constructor(
     private route: ActivatedRoute,
@@ -22,11 +24,23 @@ export class ExploreComponent implements OnInit {
   ngOnInit(): void {
     this.categories = CATEGORIES;
 
-    this.route.queryParams;
+    this.eventService.getExplorePageEvents().subscribe((events) => {
+      this.events = events;
 
-    this.route.queryParams.subscribe((query) => {
-      const { category } = query;
-      this.events = this.eventService.getExplorePageEvents(category);
+      this.route.queryParams.subscribe((query) => {
+        const { category } = query;
+        this.currentCategory = category || 'All';
+
+        if (!this.currentCategory || this.currentCategory === 'All') {
+          this.filteredEvents = this.events;
+        } else {
+          this.filteredEvents = this.events.filter(
+            (event) =>
+              event.category.toLowerCase() ===
+              this.currentCategory.toLowerCase()
+          );
+        }
+      });
     });
   }
 }

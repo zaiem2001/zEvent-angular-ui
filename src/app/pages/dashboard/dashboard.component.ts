@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { AuthService } from 'src/app/services/auth.service';
 import { EventService } from 'src/app/services/event.service';
 import { SIDEBAR_ITEMS } from 'src/constants/constants';
 import { IEvent } from 'src/interface/Event';
@@ -16,14 +17,20 @@ export class DashboardComponent implements OnInit {
     query: 'events',
     name: 'Events',
   };
+  userDetails = this.authService.getLoggedInUserDetails() || null;
 
   constructor(
     private eventService: EventService,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private authService: AuthService
   ) {}
 
   ngOnInit(): void {
-    this.events = this.eventService.getLoggedInUsersEvents('1');
+    this.userDetails = this.authService.getLoggedInUserDetails();
+    this.eventService.getLoggedInUsersEvents().subscribe((events) => {
+      this.events = events || [];
+    });
+
     this.sidebar_content = SIDEBAR_ITEMS;
     const totalItems = this.sidebar_content.top.concat(
       this.sidebar_content.bottom

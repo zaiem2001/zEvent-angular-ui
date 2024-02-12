@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { MatIconModule } from '@angular/material/icon';
 import { FormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
@@ -20,6 +20,7 @@ import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { UserAccountComponent } from './components/user-account/user-account.component';
 import { CreateEventComponent } from './pages/create-event/create-event.component';
 import { InvitesComponent } from './components/invites/invites.component';
+import { AuthInterceptor } from './services/interceptor.service';
 
 @NgModule({
   declarations: [
@@ -47,7 +48,9 @@ import { InvitesComponent } from './components/invites/invites.component';
     MatSnackBarModule,
     BrowserAnimationsModule,
   ],
-  providers: [],
+  providers: [
+    { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true },
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

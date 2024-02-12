@@ -8,6 +8,8 @@ export const LOCAL_STORAGE_KEYS = {
   USER: 'user',
 };
 
+export const PERMITTED_URLS = ['/', '/explore', '/login', '/register'];
+
 export const CATEGORIES: string[] = [
   'All',
   'Music',
@@ -68,7 +70,11 @@ export const SIDEBAR_ITEMS = {
   ],
 
   bottom: [
-    { icon: 'account_box', name: 'Zaiem', query: 'account' },
+    {
+      icon: 'account_box',
+      name: null,
+      query: 'account',
+    },
     {
       icon: 'keyboard_backspace',
       name: 'Back',
@@ -82,4 +88,8 @@ export const SIDEBAR_ITEMS = {
       event: handleLogout,
     },
   ],
+};
+
+export const ERROR_MESSAGES = {
+  JWT_EXPIRED: 'jwt expired',
 };

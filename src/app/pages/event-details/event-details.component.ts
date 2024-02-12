@@ -25,7 +25,9 @@ export class EventDetailsComponent implements OnInit {
       const { eventId } = param;
 
       if (eventId) {
-        this.event = this.eventService.getEventById(eventId);
+        this.eventService.getEventById(eventId).subscribe((event) => {
+          this.event = event || undefined;
+        });
       }
     });
   }

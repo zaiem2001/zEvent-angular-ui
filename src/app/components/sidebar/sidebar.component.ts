@@ -10,6 +10,7 @@ import { AuthService } from 'src/app/services/auth.service';
 export class SidebarComponent {
   @Input() sidebar_content: any;
   @Input() active_tab: string = '';
+  @Input() user_details: any;
 
   constructor(private router: Router, private authService: AuthService) {}
 
@@ -25,4 +26,8 @@ export class SidebarComponent {
   handleLogout = () => {
     this.authService.logout();
   };
+
+  getLogo() {
+    return this.user_details.username[0];
+  }
 }

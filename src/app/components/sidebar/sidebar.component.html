@@ -1,6 +1,6 @@
 <div class="sidebar">
   <div class="sidebar-top">
-    <div class="logo">Z</div>
+    <div class="logo">{{ getLogo() }}</div>
 
     <div
       class="sidebar-item"
@@ -24,7 +24,7 @@
       (click)="handleEvent(item.event)"
     >
       <mat-icon>{{ item.icon }}</mat-icon>
-      <span>{{ item.name }}</span>
+      <span>{{ item.name || user_details.username }}</span>
     </div>
   </div>
 </div>

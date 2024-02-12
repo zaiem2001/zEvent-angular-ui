@@ -27,6 +27,12 @@
   opacity: 0.6;
 }
 
+.category.active {
+  opacity: 1;
+  color: var(--accent-color);
+  transform: scale(1.04);
+}
+
 .category:hover {
   opacity: 1;
   transform: scale(1.04);
