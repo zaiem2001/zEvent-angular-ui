@@ -23,6 +23,7 @@
       ></app-user-account>
       <app-create-event
         *ngIf="active_tab.query === 'create-event'"
+        (addEvent)="updateEventSubj($event)"
       ></app-create-event>
 
       <app-invites *ngIf="active_tab.query === 'invites'" />

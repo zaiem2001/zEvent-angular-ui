@@ -12,21 +12,25 @@ import { IEvent } from 'src/interface/Event';
 export class EventDetailsComponent implements OnInit {
   event: IEvent | undefined = undefined;
   isUserLoggedIn = this.authService.isLoggedIn();
+  isCurrentUsersEvent = false;
 
   constructor(
-    private router: Router,
     private route: ActivatedRoute,
     private eventService: EventService,
     private authService: AuthService
   ) {}
 
   ngOnInit(): void {
+    const userDetails = this.authService.getLoggedInUserDetails();
+
     this.route.params.subscribe((param) => {
       const { eventId } = param;
 
       if (eventId) {
         this.eventService.getEventById(eventId).subscribe((event) => {
           this.event = event || undefined;
+          this.isCurrentUsersEvent =
+            userDetails.email === this?.event?.user?.email;
         });
       }
     });

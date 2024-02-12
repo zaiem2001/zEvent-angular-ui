@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { Subject } from 'rxjs';
 import { AuthService } from 'src/app/services/auth.service';
 import { EventService } from 'src/app/services/event.service';
 import { SIDEBAR_ITEMS } from 'src/constants/constants';
@@ -11,6 +12,7 @@ import { IEvent } from 'src/interface/Event';
   styleUrls: ['./dashboard.component.css'],
 })
 export class DashboardComponent implements OnInit {
+  eventsSubj = new Subject<IEvent[]>();
   events: IEvent[] = [];
   sidebar_content: any;
   active_tab: { query: string; name: string } = {
@@ -28,7 +30,11 @@ export class DashboardComponent implements OnInit {
   ngOnInit(): void {
     this.userDetails = this.authService.getLoggedInUserDetails();
     this.eventService.getLoggedInUsersEvents().subscribe((events) => {
-      this.events = events || [];
+      this.eventsSubj.next(events);
+    });
+
+    this.eventsSubj.subscribe((events) => {
+      this.events = events;
     });
 
     this.sidebar_content = SIDEBAR_ITEMS;
@@ -42,5 +48,9 @@ export class DashboardComponent implements OnInit {
         this.active_tab = totalItems.find((item: any) => item.query === tab);
       }
     });
+  }
+
+  public updateEventSubj(event: IEvent) {
+    this.eventsSubj.next([...this.events, event]);
   }
 }
